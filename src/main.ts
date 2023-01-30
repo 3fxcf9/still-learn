@@ -1,14 +1,22 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
 
-import App from './App.vue'
-import router from './router'
+import App from "./App.vue";
+import router from "./router";
 
-import './assets/main.css'
+import "./assets/main.css";
 
-const app = createApp(App)
+// Import the PocketBase JS library
+import client from "@/pocketbase";
 
-app.use(createPinia())
-app.use(router)
+// Import custom pocketBase type
+import { pocketBaseSymbol } from "@/symbols/injectionSymbols";
 
-app.mount('#app')
+const app = createApp(App);
+
+app.use(createPinia());
+app.use(router);
+
+app.provide(pocketBaseSymbol, client);
+
+app.mount("#app");
