@@ -1,4 +1,4 @@
-@import './themes.scss';
+@import "./themes.css";
 
 *,
 *::before,
@@ -10,9 +10,18 @@
 }
 
 body {
-  color: $c-text-on-background;
-  background-color: $c-background;
+  color: var(--c-background-text);
+  background-color: var(--c-background);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+a:hover,
+a:active {
+  color: var(--c-primary);
+}
+a:visited {
+  color: var(--c-primary-dark);
 }

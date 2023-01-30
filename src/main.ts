@@ -4,6 +4,8 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 
+import "./assets/main.css";
+
 // Import the PocketBase JS library
 import client from "@/pocketbase";
 
