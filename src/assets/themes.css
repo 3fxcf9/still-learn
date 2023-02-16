@@ -1,4 +1,6 @@
 :root {
+  --desktop-min-width: 500px;
+
   --c-background: white;
   --c-background-text: #111;
 

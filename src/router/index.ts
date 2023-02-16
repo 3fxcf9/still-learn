@@ -18,11 +18,10 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/DashboardView.vue"),
     },
-
     {
       path: "/login",
       name: "login",
-      meta: { onlyIfDisconnected: true },
+      meta: { redirectConnected: true },
       component: () => import("../views/LoginView.vue"),
     },
   ],
@@ -33,7 +32,7 @@ router.beforeEach((to, from) => {
     return {
       path: "/login",
     };
-  } else if (to.meta.onlyIfDisconnected && client?.authStore.token) {
+  } else if (to.meta.redirectConnected && client?.authStore.token) {
     return {
       path: "/dashboard",
     };
