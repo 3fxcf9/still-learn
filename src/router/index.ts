@@ -24,6 +24,12 @@ const router = createRouter({
       meta: { redirectConnected: true },
       component: () => import("../views/LoginView.vue"),
     },
+    {
+      path: "/register",
+      name: "register",
+      meta: { redirectConnected: true },
+      component: () => import("../views/RegisterView.vue"),
+    },
   ],
 });
 

@@ -27,10 +27,17 @@ function updateValue(value: string) {
 </script>
 
 <style lang="scss" scoped>
+$transition-duration: 0.3s;
+
 label,
 input {
   background-color: $c-form-field-bg;
   padding-left: 15px;
+
+  cursor: text;
+
+  transition: background-color $transition-duration ease,
+    color $transition-duration ease;
 }
 
 label {
@@ -41,6 +48,11 @@ label {
 
   padding-top: 10px;
   border-radius: $form-input-radius $form-input-radius 0 0;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 input {
@@ -58,5 +70,9 @@ input {
 .form-field:focus-within label,
 .form-field:focus-within input {
   background-color: $c-form-field-active-bg;
+}
+
+.form-field:focus-within label {
+  color: $c-form-field-focused-label;
 }
 </style>
