@@ -11,10 +11,11 @@ const props = defineProps({
 <style lang="scss" scoped>
 input {
   border: none;
-  color: white;
-  background-color: black;
+  color: $c-on-primary;
+  background-color: $c-primary;
+  border-radius: $form-input-radius;
   padding: 20px 25px;
-  border-radius: 5px;
+  text-transform: uppercase;
 
   cursor: pointer;
 

@@ -1,5 +1,4 @@
-@import "./themes.css";
-@import "./fonts.css";
+@import "./fonts.scss";
 
 *,
 *::before,
@@ -15,8 +14,8 @@
 }
 
 body {
-  color: var(--c-background-text);
-  background-color: var(--c-background);
+  color: $c-on-main;
+  background-color: $c-main-bg;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,10 +24,10 @@ body {
 a,
 a:hover,
 a:active {
-  color: var(--c-primary);
+  color: $c-accent;
 }
 a:visited {
-  color: var(--c-primary-dark);
+  color: $c-accent-dark;
 }
 
 .serif {

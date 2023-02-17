@@ -4,7 +4,7 @@ import { inject, ref } from "vue";
 import { useRouter } from "vue-router";
 
 import SubmitButton from "@/components/forms/SubmitButton.vue";
-import FormInput from "@/components/forms/FormInput.vue";
+import FormInput from "@/components/forms/FormField.vue";
 
 const $pb = inject(pocketBaseSymbol);
 
@@ -28,12 +28,18 @@ const authUser = async () => {
     console.log(error);
   }
 };
+
+const titles = ["Heureux de te revoir !", "Title B", "Title C"];
+
+const generateTitle = () => {
+  return titles[Math.floor(Math.random() * titles.length)];
+};
 </script>
 
 <template>
   <div id="login">
     <div class="login-container">
-      <h2>Heureux de te revoir !</h2>
+      <h2>{{ generateTitle() }}</h2>
       <form>
         <FormInput
           type="text"
@@ -76,7 +82,7 @@ form {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: $form-input-spacing;
 }
 
 h2 {

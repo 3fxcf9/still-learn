@@ -1,0 +1,17 @@
+@import "./mq";
+
+$c-main-bg: white;
+$c-on-main: black;
+
+$c-primary: black;
+$c-on-primary: white;
+
+$c-accent: rgb(41, 51, 85);
+$c-accent-dark: rgb(32, 40, 68);
+
+// Form
+$c-form-field-bg: #ebeff2;
+$c-form-field-active-bg: #d5dbdf;
+$c-form-field-label: #656a6d;
+$form-input-spacing: 30px;
+$form-input-radius: 3px
