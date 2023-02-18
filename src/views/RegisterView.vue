@@ -79,7 +79,7 @@ let title = titles[Math.floor(Math.random() * titles.length)];
 
 <style lang="scss" scoped>
 .login-container {
-  padding: 2rem;
+  padding: $form-input-spacing;
 }
 
 .right {
@@ -130,7 +130,7 @@ h2 {
 
   .right {
     display: block;
-    background-image: url("@/assets/images/login_bg.jpeg");
+    background-image: url("@/assets/images/register_bg.jpeg");
     background-size: cover;
     background-position: right center;
   }
