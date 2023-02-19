@@ -94,7 +94,7 @@ form {
 }
 
 h2 {
-  font-family: "Noto Serif";
+  font-family: "Unbounded";
   font-size: 2rem;
 }
 @media screen and (min-width: $mq-small-med) {

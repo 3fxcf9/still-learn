@@ -28,7 +28,11 @@ const authUser = async () => {
   }
 };
 
-const titles = ["Heureux de te revoir !", "Title B", "Title C"];
+const titles = [
+  "Heureux de te revoir !",
+  "Le meilleur moyen de réviser !",
+  "Gagne du temps et amuse-toi en révisant !",
+];
 const title = titles[Math.floor(Math.random() * titles.length)];
 
 function lerp(start: number, end: number, amt: number): number {
@@ -114,7 +118,7 @@ form {
 }
 
 h2 {
-  font-family: "Noto Serif";
+  font-family: "Unbounded";
   font-size: 2rem;
 }
 @media screen and (min-width: $mq-small-med) {

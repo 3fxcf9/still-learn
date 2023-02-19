@@ -3,6 +3,17 @@
 **********************/
 /* 100 */
 @font-face {
+  font-family: "Unbounded";
+  src: local("☺"), url("./fonts/Unbounded/Unbounded-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*********************
+    Font Noto Sans
+**********************/
+/* 100 */
+@font-face {
   font-family: "Noto Sans";
   src: local("☺"), url("./fonts/Noto_Sans/NotoSans-Thin.woff") format("woff");
   font-weight: 100;
