@@ -120,9 +120,6 @@ h2 {
     padding: 5rem;
     overflow-y: scroll;
   }
-  h2 {
-    font-size: 3rem;
-  }
 
   form {
     margin-top: 4rem;

@@ -152,10 +152,6 @@ h2 {
     max-height: 100vh;
     width: 50%;
   }
-  h2 {
-    font-size: 3rem;
-  }
-
   form {
     margin-top: 4rem;
   }
