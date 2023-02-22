@@ -11,6 +11,7 @@ import Cta from "@/components/Cta.vue";
     </nav>
     <div class="section-1">
       <div class="circle"></div>
+      <div class="circle"></div>
       <h1>Réviser n'a jamais été aussi facile</h1>
       <div class="cta-bar">
         <Cta text="Creer un compte" toName="register" ctaStyle="normal" />
@@ -81,7 +82,7 @@ $feature-height: 150px;
 .section-1 {
   text-align: center;
   padding-top: 5rem;
-  padding-bottom: 10rem;
+  padding-bottom: 12rem;
   background-color: $c-landing-bg;
 }
 
@@ -89,8 +90,16 @@ $feature-height: 150px;
   display: inline-block;
   height: 20px;
   width: 20px;
-  border-radius: 50%;
-  background-image: url("@/assets/images/register_bg.jpeg");
+  border-radius: 10px;
+  // from #FF9618 to #FFCF41
+  // background-image: linear-gradient(2rad, #ff9618, #ffcf41);
+  background-image: linear-gradient(2rad, #ff5500, #ff5500 40%, #ffff00 60%);
+  background-attachment: fixed;
+  // background-image: url("@/assets/images/register_bg.jpeg");
+}
+.circle:nth-of-type(2) {
+  width: 80px;
+  margin-left: 10px;
 }
 
 h1 {
@@ -104,10 +113,6 @@ h1 {
   margin-top: 3rem;
   display: inline-flex;
   gap: 1rem;
-}
-
-.a {
-  height: 200vh;
 }
 
 // Section 2
@@ -124,7 +129,7 @@ h1 {
 
 .feature {
   --padding: 1rem;
-  height: $feature-height;
+  min-height: $feature-height;
   display: flex;
   gap: 1rem;
   background-color: lighten(fade-in($c-landing-bg, 1), 20%);
@@ -141,5 +146,22 @@ h1 {
     font-size: 1.2rem;
     font-weight: 800;
   }
+}
+
+@media screen and (min-width: $mq-small-med) and (max-width: $mq-med-large) {
+  .features {
+    padding: 0 5rem;
+  }
+}
+
+@media screen and (min-width: $mq-med-large) {
+  .features {
+    flex-direction: row;
+  }
+}
+
+// Placeholder
+.a {
+  height: 200vh;
 }
 </style>
