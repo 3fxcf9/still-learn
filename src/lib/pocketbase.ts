@@ -6,6 +6,5 @@ export const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL);
 export const currentUser = writable(pb.authStore.model);
 
 pb.authStore.onChange((auth) => {
-	console.log('authStore changed', auth);
 	currentUser.set(pb.authStore.model);
 });
