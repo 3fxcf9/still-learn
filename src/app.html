@@ -2,8 +2,24 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+
+		<meta name="theme-color" content="#121212" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-wep-app-capable" content="yes" />
+		<!-- Apple does not allow svg icons. -->
+		<!-- Use 196x196 png instead -->
+		<!-- <link rel="apple-touch-icon" href="%sveltekit.assets%/apple-touch-icon.png" />
+		<link
+			rel="apple-touch-icon-precomposed"
+			href="%sveltekit.assets%/apple-touch-icon-precomposed.png"
+		/>
+		<link rel="icon" sizes="196x196" href="%sveltekit.assets%/apple-touch-icon.png" /> -->
+		<link rel="manifest" href="%sveltekit.assets%/manifest.json" />
+
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Still-Learn</title>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
