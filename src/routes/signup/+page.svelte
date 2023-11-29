@@ -3,7 +3,7 @@
 	import { goto } from '$app/navigation';
 
 	// Redirect is already logged in
-	if ($currentUser) goto('/');
+	if ($currentUser) goto('/dashboard');
 
 	// Form fields
 	/** @type {string} */
@@ -31,7 +31,7 @@
 			};
 			await pb.collection('users').create(data);
 			await pb.collection('users').authWithPassword(email, password);
-			goto('/');
+			goto('/dashboard');
 		} catch (e) {
 			if (e instanceof Error) formError = e;
 			console.error(e);
@@ -41,13 +41,14 @@
 
 <form on:submit|preventDefault>
 	<h2>Sign up</h2>
-	<input placeholder="Name" type="text" bind:value={name} />
-	<input placeholder="Username" type="text" bind:value={username} />
-	<input placeholder="Email" type="text" bind:value={email} />
-	<input placeholder="Password" type="password" bind:value={password} />
-	<input placeholder="Confirm password" type="password" bind:value={passwordConfirm} />
-	<button on:click={signup}>Sign up</button>
+	<input placeholder="Name" type="text" bind:value={name} /><br />
+	<input placeholder="Username" type="text" bind:value={username} /><br />
+	<input placeholder="Email" type="text" bind:value={email} /><br />
+	<input placeholder="Password" type="password" bind:value={password} /><br />
+	<input placeholder="Confirm password" type="password" bind:value={passwordConfirm} /><br />
+	<button on:click={signup}>Sign up</button><br />
 	{#if formError}
-		<span style="color:red">{formError.message}</span>
+		<span style="color:red">{formError.message}</span><br />
 	{/if}
+	Already have an account ? <a href="/login">login instead</a>
 </form>

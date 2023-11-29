@@ -1,19 +1,12 @@
 <script>
 	import { currentUser, pb } from '$lib/pocketbase';
-
-	function logout() {
-		pb.authStore.clear();
-	}
-	console.log($currentUser);
+	import { goto } from '$app/navigation';
 </script>
 
 <h1>Still-Learn</h1>
 
 {#if $currentUser}
-	<p>
-		Signed in as {$currentUser.username}
-	</p>
-	<button on:click={logout}>Logout</button>
+	<a href="/dashboard">dashboard</a>
 {:else}
-	Logged out. <a href="login">login</a> <a href="signup">sign up</a>
+	<a href="login">login</a> <a href="signup">sign up</a>
 {/if}
