@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { pb, currentUser } from '$lib/pocketbase';
 	import { goto } from '$app/navigation';
 
@@ -6,13 +6,10 @@
 	if ($currentUser) goto('/dashboard');
 
 	// Form fields
-	/** @type {string} */
-	let identity;
-	/** @type {string} */
-	let password;
+	let identity: string;
+	let password: string;
 
-	/** @type {Error | undefined} */
-	let formError;
+	let formError: Error | undefined;
 
 	async function login() {
 		try {

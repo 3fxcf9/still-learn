@@ -1,6 +1,5 @@
-<script>
-	import { currentUser, pb } from '$lib/pocketbase';
-	import { goto } from '$app/navigation';
+<script lang="ts">
+	import { currentUser } from '$lib/pocketbase';
 </script>
 
 <h1>Still-Learn</h1>
