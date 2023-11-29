@@ -1,0 +1,20 @@
+html {
+	--c-main-bg: white;
+	--c-on-main: black;
+
+	--c-primary: black;
+	--c-on-primary: white;
+
+	--c-accent: rgb(255, 142, 56);
+	--c-accent-dark: rgb(186, 88, 14);
+	--c-on-accent: white;
+
+	--c-form-field-bg: #ebeff2;
+	--c-form-field-active-bg: #d5dbdf;
+	--c-form-field-error-bg: #dfd9d5;
+	--c-form-field-label: #656a6d;
+	--c-form-field-focused-label: #3a3d3f;
+	--c-form-field-error-label: #b82525;
+	--form-input-spacing: 2rem;
+	--form-input-radius: 3px;
+}

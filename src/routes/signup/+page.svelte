@@ -89,9 +89,3 @@
 	{#if formError?.message}<p class="error">{formError.message}</p>{/if}
 </form>
 Déjà inscrit ?<a href="/login">se connecter</a>
-
-<style>
-	.error {
-		color: red;
-	}
-</style>

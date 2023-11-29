@@ -1,0 +1,52 @@
+@import './variables';
+@import './fonts.scss';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	list-style-type: none;
+
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1rem;
+}
+
+body {
+	color: var(--c-on-main);
+	background-color: var(--c-main-bg);
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+	font-family: 'Unbounded';
+	font-size: 3rem;
+}
+h2 {
+	font-family: 'Unbounded';
+	font-size: 2rem;
+}
+
+a,
+a:hover,
+a:active {
+	color: var(--c-accent);
+}
+a:visited {
+	color: var(--c-accent-dark);
+}
+
+.serif {
+	font-family: 'Noto Serif';
+}
+
+/* TODO: Remove */
+.error {
+	color: var(--c-form-field-error-label);
+}

@@ -50,9 +50,3 @@
 	{#if formError?.message}<p class="error">{formError.message}</p>{/if}
 </form>
 Pas encore inscrit ?<a href="/signup">creer un compte</a>
-
-<style>
-	.error {
-		color: red;
-	}
-</style>
