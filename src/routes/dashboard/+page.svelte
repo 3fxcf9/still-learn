@@ -8,7 +8,7 @@
 	}
 </script>
 
-<h1>Still-Learn</h1>
+<h1>Dashboard</h1>
 <a href="/">home</a>
 {#if $currentUser}
 	<p>
