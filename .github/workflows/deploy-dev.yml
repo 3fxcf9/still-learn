@@ -32,6 +32,8 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+        env:
+          VITE_POCKETBASE_URL: ${{ secrets.VITE_POCKETBASE_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
