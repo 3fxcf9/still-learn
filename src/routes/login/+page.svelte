@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { pb, currentUser } from '$lib/pocketbase';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { processError, type ProcessedError } from '$lib/pb_error_process';
 
 	import TextInput from '../components/design_system/form/TextInput.svelte';
@@ -103,7 +104,7 @@
 			<!-- </div> -->
 		</form>
 		<p>
-			Pas encore inscrit ?&nbsp;&nbsp;<a href="/signup">creer un compte</a>
+			Pas encore inscrit ?&nbsp;&nbsp;<a href="{base}/signup">creer un compte</a>
 		</p>
 	</div>
 </div>
@@ -154,7 +155,7 @@
 			align-items: center;
 			justify-content: center;
 
-			background-image: url('images/login_bg.jpeg');
+			background-image: url('/images/login_bg.jpeg');
 			background-size: 105% 105%;
 		}
 
