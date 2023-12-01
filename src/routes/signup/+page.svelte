@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { pb, currentUser } from '$lib/pocketbase';
 	import { goto } from '$app/navigation';
-	import { base } from '$app/paths';
 	import { processError, type ProcessedError } from '$lib/pb_error_process';
 
 	import TextInput from '../components/design_system/form/TextInput.svelte';
 	import SubmitButton from '../components/design_system/form/SubmitButton.svelte';
 
 	// Redirect is already logged in
-	if ($currentUser) goto('/dashboard');
+	if ($currentUser) goto('dashboard');
 
 	// Form fields
 	let first_name: string;
@@ -97,7 +96,7 @@
 			<!-- </div> -->
 		</form>
 		<p>
-			Déjà inscrit ?&nbsp;&nbsp;<a href="{base}/login">se connecter</a>
+			Déjà inscrit ?&nbsp;&nbsp;<a href="login">se connecter</a>
 		</p>
 	</div>
 	<div class="right"></div>

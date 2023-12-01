@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { pb, currentUser } from '$lib/pocketbase';
 	import { goto } from '$app/navigation';
-	import { base } from '$app/paths';
 	import { processError, type ProcessedError } from '$lib/pb_error_process';
 
 	import TextInput from '../components/design_system/form/TextInput.svelte';
 	import SubmitButton from '../components/design_system/form/SubmitButton.svelte';
 
 	// Redirect is already logged in
-	if ($currentUser) goto('/dashboard');
+	if ($currentUser) goto('dashboard');
 
 	// Form fields
 	let identity: string;
@@ -32,7 +31,7 @@
 	async function login() {
 		try {
 			const user = await pb.collection('users').authWithPassword(identity, password);
-			goto('/dashboard');
+			goto('dashboard');
 		} catch (e: any) {
 			formError = processError(e, formErrorMessages);
 		}
@@ -104,7 +103,7 @@
 			<!-- </div> -->
 		</form>
 		<p>
-			Pas encore inscrit ?&nbsp;&nbsp;<a href="{base}/signup">creer un compte</a>
+			Pas encore inscrit ?&nbsp;&nbsp;<a href="signup">creer un compte</a>
 		</p>
 	</div>
 </div>

@@ -5,7 +5,7 @@
 
 	function logout() {
 		pb.authStore.clear();
-		goto('/login');
+		goto('login');
 	}
 </script>
 
@@ -17,5 +17,5 @@
 	</p>
 	<button on:click={logout}>Logout</button>
 {:else}
-	Logged out. <a href="{base}/login">login</a> <a href="{base}/signup">sign up</a>
+	Logged out. <a href="login">login</a> <a href="signup">sign up</a>
 {/if}
