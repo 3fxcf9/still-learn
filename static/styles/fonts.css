@@ -9,6 +9,7 @@
 		url('../fonts/Unbounded/Unbounded-Bold.woff2') format('woff2');
 	font-weight: 700;
 	font-style: normal;
+	font-display: swap;
 }
 
 /*********************
@@ -22,6 +23,7 @@
 		url('../fonts/Noto_Sans/NotoSans-Thin.woff') format('woff');
 	font-weight: 100;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Sans';
@@ -30,6 +32,7 @@
 		url('../fonts/Noto_Sans/NotoSans-ThinItalic.woff') format('woff');
 	font-weight: 100;
 	font-style: italic;
+	font-display: swap;
 }
 
 /* 200 */
@@ -40,6 +43,7 @@
 		url('../fonts/Noto_Sans/NotoSans-ExtraLight.woff') format('woff');
 	font-weight: 200;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Sans';
@@ -48,6 +52,7 @@
 		url('../fonts/Noto_Sans/NotoSans-ExtraLightItalic.woff') format('woff');
 	font-weight: 200;
 	font-style: italic;
+	font-display: swap;
 }
 
 /* 300 */
@@ -58,6 +63,7 @@
 		url('../fonts/Noto_Sans/NotoSans-Light.woff') format('woff');
 	font-weight: 300;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Sans';
@@ -66,6 +72,7 @@
 		url('../fonts/Noto_Sans/NotoSans-LightItalic.woff') format('woff');
 	font-weight: 300;
 	font-style: italic;
+	font-display: swap;
 }
 
 /* 400 */
@@ -76,6 +83,7 @@
 		url('../fonts/Noto_Sans/NotoSans-Regular.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Sans';
@@ -84,6 +92,7 @@
 		url('../fonts/Noto_Sans/NotoSans-Italic.woff') format('woff');
 	font-weight: 400;
 	font-style: italic;
+	font-display: swap;
 }
 
 /* 500 */
@@ -94,6 +103,7 @@
 		url('../fonts/Noto_Sans/NotoSans-Medium.woff') format('woff');
 	font-weight: 500;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Sans';
@@ -102,6 +112,7 @@
 		url('../fonts/Noto_Sans/NotoSans-MediumItalic.woff') format('woff');
 	font-weight: 500;
 	font-style: italic;
+	font-display: swap;
 }
 
 /* 600 */
@@ -112,6 +123,7 @@
 		url('../fonts/Noto_Sans/NotoSans-SemiBold.woff') format('woff');
 	font-weight: 600;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Sans';
@@ -120,6 +132,7 @@
 		url('../fonts/Noto_Sans/NotoSans-SemiBoldItalic.woff') format('woff');
 	font-weight: 600;
 	font-style: italic;
+	font-display: swap;
 }
 
 /* 700 */
@@ -130,6 +143,7 @@
 		url('../fonts/Noto_Sans/NotoSans-Bold.woff') format('woff');
 	font-weight: 700;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Sans';
@@ -138,6 +152,7 @@
 		url('../fonts/Noto_Sans/NotoSans-BoldItalic.woff') format('woff');
 	font-weight: 700;
 	font-style: italic;
+	font-display: swap;
 }
 
 /* 800 */
@@ -148,6 +163,7 @@
 		url('../fonts/Noto_Sans/NotoSans-ExtraBold.woff') format('woff');
 	font-weight: 800;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Sans';
@@ -156,6 +172,7 @@
 		url('../fonts/Noto_Sans/NotoSans-ExtraBold.woff') format('woff');
 	font-weight: 800;
 	font-style: italic;
+	font-display: swap;
 }
 
 /* 900 */
@@ -166,6 +183,7 @@
 		url('../fonts/Noto_Sans/NotoSans-Black.woff') format('woff');
 	font-weight: 900;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Sans';
@@ -174,6 +192,7 @@
 		url('../fonts/Noto_Sans/NotoSans-BlackItalic.woff') format('woff');
 	font-weight: 900;
 	font-style: italic;
+	font-display: swap;
 }
 
 /*********************
@@ -187,6 +206,7 @@
 		url('../fonts/Noto_Serif/NotoSerif-Regular.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Serif';
@@ -195,6 +215,7 @@
 		url('../fonts/Noto_Serif/NotoSerif-Italic.woff') format('woff');
 	font-weight: 400;
 	font-style: italic;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Serif';
@@ -203,6 +224,7 @@
 		url('../fonts/Noto_Serif/NotoSerif-Bold.woff') format('woff');
 	font-weight: 700;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Noto Serif';
@@ -211,4 +233,5 @@
 		url('../fonts/Noto_Serif/NotoSerif-BoldItalic.woff') format('woff');
 	font-weight: 700;
 	font-style: italic;
+	font-display: swap;
 }

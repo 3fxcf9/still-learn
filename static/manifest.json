@@ -1,11 +1,18 @@
 {
 	"name": "Still-Learn",
-	"short_name": "S-Learn",
-	"start_url": "/",
+	"short_name": "Still-Learn",
+	"description": "A collaborative web app to learn.",
+	"start_url": "/dashboard",
 	"display": "standalone",
 	"background_color": "#121212",
 	"theme_color": "#121212",
 	"icons": [
+		{
+			"src": "icons/maskable.png",
+			"sizes": "1024x1024",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
 		{
 			"src": "icons/windows11/SmallTile.scale-100.png",
 			"sizes": "71x71"
