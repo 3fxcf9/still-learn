@@ -36,6 +36,7 @@
 
 	label,
 	input {
+		color: var(--c-on-main);
 		background-color: var(--c-form-field-bg);
 		padding-left: 15px;
 		padding-right: 15px;

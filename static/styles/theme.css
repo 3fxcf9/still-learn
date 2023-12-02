@@ -28,3 +28,34 @@ html {
 	--form-input-spacing: 2rem;
 	--form-input-radius: 3px;
 }
+
+html[theme='dark'] {
+	--c-main-bg: #121212;
+	--c-main-bg-hover: #1c1c1c;
+
+	--border-color: #37393c;
+	--border-width: 1px;
+
+	--c-on-main: white;
+	--c-on-main-dimmed: #d2d2d2;
+	--c-on-main-disabled: grey;
+
+	--c-primary: var(--c-accent-dark);
+	--c-on-primary: black;
+
+	--c-accent: rgb(255, 152, 53);
+	--c-accent-dark: rgb(195, 111, 46);
+	--c-on-accent: var(--c-main-bg);
+
+	--c-curtain: rgba(0, 0, 0, 0.1);
+
+	/* Forms */
+	--c-form-field-bg: #201f20;
+	--c-form-field-active-bg: #2c2c2f;
+	--c-form-field-error-bg: #2b2322;
+	--c-form-field-label: #bbbebf;
+	--c-form-field-focused-label: #f3f6ff;
+	--c-form-field-error-label: #b82525;
+	--form-input-spacing: 2rem;
+	--form-input-radius: 3px;
+}
