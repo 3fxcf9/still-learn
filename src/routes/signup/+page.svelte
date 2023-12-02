@@ -3,8 +3,8 @@
 	import { goto } from '$app/navigation';
 	import { processError, type ProcessedError } from '$lib/pb_error_process';
 
-	import TextInput from '../components/design_system/form/TextInput.svelte';
-	import SubmitButton from '../components/design_system/form/SubmitButton.svelte';
+	import TextInput from '$lib/components/design_system/form/TextInput.svelte';
+	import SubmitButton from '$lib/components/design_system/form/SubmitButton.svelte';
 
 	// Redirect is already logged in
 	if ($currentUser) goto('dashboard');
@@ -93,10 +93,11 @@
 			<!-- <div> -->
 			<!-- {#if formError?.message}<p class="error">{formError.message}</p>{/if} -->
 			<SubmitButton text="Valider" />
+			<!-- TODO: Add loader -->
 			<!-- </div> -->
 		</form>
 		<p>
-			Déjà inscrit ?&nbsp;&nbsp;<a href="login">se connecter</a>
+			Déjà inscrit ?&nbsp;&nbsp;<a href="login">se connecter</a>.
 		</p>
 	</div>
 	<div class="right"></div>

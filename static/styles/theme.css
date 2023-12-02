@@ -1,6 +1,13 @@
 html {
 	--c-main-bg: white;
+	--c-main-bg-hover: #f2f2f2;
+
+	--border-color: #c9d1db;
+	--border-width: 1px;
+
 	--c-on-main: black;
+	--c-on-main-dimmed: #1a1a1a;
+	--c-on-main-disabled: grey;
 
 	--c-primary: black;
 	--c-on-primary: white;
@@ -9,6 +16,9 @@ html {
 	--c-accent-dark: rgb(173, 83, 14);
 	--c-on-accent: white;
 
+	--c-curtain: rgba(0, 0, 0, 0.1);
+
+	/* Forms */
 	--c-form-field-bg: #ebeff2;
 	--c-form-field-active-bg: #d5dbdf;
 	--c-form-field-error-bg: #dfd9d5;
