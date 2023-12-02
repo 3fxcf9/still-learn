@@ -10,7 +10,7 @@
 
 	function logout() {
 		pb.authStore.clear();
-		goto('login');
+		goto(base + 'login');
 	}
 
 	const menuitems = [

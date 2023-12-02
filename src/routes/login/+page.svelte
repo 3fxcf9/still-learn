@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { pb, currentUser } from '$lib/pocketbase';
+	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { processError, type ProcessedError } from '$lib/pb_error_process';
 
@@ -28,12 +29,33 @@
 		}
 	};
 
+	function checkEmptyFields() {
+		let errors = false;
+		const fieldsError: { [key: string]: string } = {};
+		if (!identity) {
+			errors = true;
+			fieldsError.identity = formErrorMessages.identity.validation_required;
+		}
+		if (!password) {
+			errors = true;
+			fieldsError.password = formErrorMessages.password.validation_required;
+		}
+		if (errors) formError = { message: formErrorMessages.status[400], status: 400, fieldsError };
+		return errors;
+	}
+
+	let loading = false;
 	async function login() {
+		if (checkEmptyFields()) return;
+
 		try {
+			loading = true;
 			const user = await pb.collection('users').authWithPassword(identity, password);
-			goto('dashboard');
+			goto(base + 'dashboard');
 		} catch (e: any) {
 			formError = processError(e, formErrorMessages);
+		} finally {
+			loading = false;
 		}
 	}
 
@@ -97,14 +119,13 @@
 			<TextInput label="Nom d'utilisateur ou adresse mail" bind:value={identity} error_message={formError?.fieldsError?.identity} id="login_identity_input" />
 			<TextInput label="Mot de passe" bind:value={password} password={true} error_message={formError?.fieldsError?.password} id="login_password_input" />
 
-			<!-- <div> -->
-			<!-- {#if formError?.message}<p class="error">{formError.message}</p>{/if} -->
-			<SubmitButton text="Se connecter" />
-			<!-- TODO: Add loader -->
-			<!-- </div> -->
+			<div>
+				{#if formError?.message && !Object.keys(formError?.fieldsError ?? {}).length}<p class="error">{formError.message}</p>{/if}
+				<SubmitButton text={loading ? '• • •' : 'Se connecter'} />
+			</div>
 		</form>
 		<p>
-			Pas encore inscrit ?&nbsp;&nbsp;<a href="signup">créer un compte</a>.
+			Pas encore inscrit ?&nbsp;&nbsp;<a href="{base}signup">créer un compte</a>.
 		</p>
 	</div>
 </div>

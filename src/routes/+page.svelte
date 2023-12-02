@@ -8,5 +8,5 @@
 {#if $currentUser}
 	<a href="{base}/dashboard">dashboard</a>
 {:else}
-	<a href="login">login</a> <a href="signup">sign up</a>
+	<a href="{base}login">login</a> <a href="{base}signup">sign up</a>
 {/if}

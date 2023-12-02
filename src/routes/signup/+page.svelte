@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { pb, currentUser } from '$lib/pocketbase';
+	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { processError, type ProcessedError } from '$lib/pb_error_process';
 
@@ -7,7 +8,7 @@
 	import SubmitButton from '$lib/components/design_system/form/SubmitButton.svelte';
 
 	// Redirect is already logged in
-	if ($currentUser) goto('dashboard');
+	if ($currentUser) goto(base + 'dashboard');
 
 	// Form fields
 	let first_name: string;
@@ -54,8 +55,39 @@
 		}
 	};
 
+	function checkEmptyFields() {
+		let errors = false;
+		const fieldsError: { [key: string]: string } = {};
+		if (!first_name) {
+			errors = true;
+			fieldsError.first_name = formErrorMessages.first_name.validation_required;
+		}
+		if (!last_name) {
+			errors = true;
+			fieldsError.last_name = formErrorMessages.last_name.validation_required;
+		}
+		if (!email) {
+			errors = true;
+			fieldsError.email = formErrorMessages.email.validation_required;
+		}
+		if (!password) {
+			errors = true;
+			fieldsError.password = formErrorMessages.password.validation_required;
+		}
+		if (!passwordConfirm) {
+			errors = true;
+			fieldsError.passwordConfirm = formErrorMessages.passwordConfirm.validation_required;
+		}
+		if (errors) formError = { message: formErrorMessages.status[400], status: 400, fieldsError };
+		return errors;
+	}
+
+	let loading = false;
 	async function signup() {
+		if (checkEmptyFields()) return;
+
 		try {
+			loading = true;
 			const data = {
 				first_name,
 				last_name,
@@ -69,6 +101,8 @@
 			goto('/dashboard');
 		} catch (e: any) {
 			formError = processError(e, formErrorMessages);
+		} finally {
+			loading = false;
 		}
 	}
 
@@ -90,14 +124,13 @@
 			<TextInput label="Mot de passe" bind:value={password} password={true} error_message={formError?.fieldsError?.password} id="signup_password_input" />
 			<TextInput label="Confirmation du mot de passe" bind:value={passwordConfirm} password={true} error_message={formError?.fieldsError?.passwordConfirm} id="signup_password-confirm_input" />
 
-			<!-- <div> -->
-			<!-- {#if formError?.message}<p class="error">{formError.message}</p>{/if} -->
-			<SubmitButton text="Valider" />
-			<!-- TODO: Add loader -->
-			<!-- </div> -->
+			<div>
+				{#if formError?.message && !Object.keys(formError?.fieldsError ?? {}).length}<p class="error">{formError.message}</p>{/if}
+				<SubmitButton text={loading ? '• • •' : 'Valider'} />
+			</div>
 		</form>
 		<p>
-			Déjà inscrit ?&nbsp;&nbsp;<a href="login">se connecter</a>.
+			Déjà inscrit ?&nbsp;&nbsp;<a href="{base}login">se connecter</a>.
 		</p>
 	</div>
 	<div class="right"></div>
