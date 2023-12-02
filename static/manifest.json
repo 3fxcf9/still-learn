@@ -2,7 +2,7 @@
 	"name": "Still-Learn",
 	"short_name": "Still-Learn",
 	"description": "A collaborative web app to learn.",
-	"start_url": "/",
+	"start_url": "/still-learn/dashboard",
 	"display": "standalone",
 	"background_color": "#121212",
 	"theme_color": "#121212",
