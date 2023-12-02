@@ -51,7 +51,7 @@
 		try {
 			loading = true;
 			const user = await pb.collection('users').authWithPassword(identity, password);
-			goto(base + 'dashboard');
+			goto(base + '/dashboard');
 		} catch (e: any) {
 			formError = processError(e, formErrorMessages);
 		} finally {
@@ -125,7 +125,7 @@
 			</div>
 		</form>
 		<p>
-			Pas encore inscrit ?&nbsp;&nbsp;<a href="{base}signup">créer un compte</a>.
+			Pas encore inscrit ?&nbsp;&nbsp;<a href="{base}/signup">créer un compte</a>.
 		</p>
 	</div>
 </div>

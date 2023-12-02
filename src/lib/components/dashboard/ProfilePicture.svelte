@@ -10,7 +10,7 @@
 
 	function logout() {
 		pb.authStore.clear();
-		goto(base + 'login');
+		goto(base + '/login');
 	}
 
 	const name_capital = ($currentUser?.name || $currentUser?.username)[0].toUpperCase();

@@ -8,7 +8,7 @@
 	import SubmitButton from '$lib/components/design_system/form/SubmitButton.svelte';
 
 	// Redirect is already logged in
-	if ($currentUser) goto(base + 'dashboard');
+	if ($currentUser) goto(base + '/dashboard');
 
 	// Form fields
 	let first_name: string;
@@ -98,7 +98,7 @@
 			};
 			await pb.collection('users').create(data);
 			await pb.collection('users').authWithPassword(email, password);
-			goto('/dashboard');
+			goto(base + '/dashboard');
 		} catch (e: any) {
 			formError = processError(e, formErrorMessages);
 		} finally {
@@ -130,7 +130,7 @@
 			</div>
 		</form>
 		<p>
-			Déjà inscrit ?&nbsp;&nbsp;<a href="{base}login">se connecter</a>.
+			Déjà inscrit ?&nbsp;&nbsp;<a href="{base}/login">se connecter</a>.
 		</p>
 	</div>
 	<div class="right"></div>
