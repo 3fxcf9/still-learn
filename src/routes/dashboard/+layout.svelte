@@ -7,6 +7,7 @@
 	// Redirect user if logged out
 	import { goto } from '$app/navigation';
 	import { base } from '$app/paths';
+
 	import { currentUser } from '$lib/pocketbase';
 	if (!$currentUser) goto(base + '/login');
 
@@ -29,7 +30,7 @@
 	<div class="navbar">
 		<MediaQuery let:matches>
 			{#if !matches.desktop}
-				<HamburgerIcon class="hamburger" bind:state={menu_opened} />
+				<HamburgerIcon bind:state={menu_opened} />
 			{/if}
 		</MediaQuery>
 		<div class="nav-content">
@@ -47,11 +48,14 @@
 <style lang="scss">
 	@import '$lib/components/dashboard/DashboardConfig.scss';
 	@import '$lib/mq.scss';
+	$main-padding: 0.5rem;
 
 	#dashboard {
 		position: relative; // Menu in desktop mode
-		display: grid;
+
 		width: 100%;
+
+		display: grid;
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: $navbar-height 1fr;
@@ -76,6 +80,7 @@
 
 	.navbar .nav-content {
 		flex: 1;
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -85,16 +90,18 @@
 	}
 
 	#input_search {
-		border: none;
+		width: min(100%, 20rem);
 		height: calc($navbar-height - 2 * $navbar-padding);
+
+		border: none;
 		padding: 0 1rem 0;
 		border-radius: calc($navbar-height/8);
-		background-color: var(--c-main-bg-hover);
-		color: var(--c-on-main-dimmed);
-		width: min(100%, 20rem);
+
+		color: var(--c-on-bg-dimmed-1);
+		background-color: var(--c-bg-contrast-1);
 
 		&:focus {
-			outline: 2px solid var(--c-form-field-active-bg);
+			outline: 2px solid var(--c-bg-contrast-2);
 		}
 	}
 
@@ -102,14 +109,16 @@
 		position: fixed;
 		top: $navbar-height;
 		left: 0;
+
 		width: 100%;
 		height: calc(100% - $navbar-height);
-		background-color: var(--c-main-bg);
+
+		background-color: var(--c-bg);
 
 		z-index: 100;
-
 		transform: translateX(-100%);
 		opacity: 0;
+
 		transition:
 			transform 0.3s ease-in-out,
 			opacity 0.2s ease-in-out;
@@ -123,12 +132,15 @@
 	main {
 		grid-area: main;
 		min-width: 0px;
+
+		padding: $main-padding;
 	}
 
 	// Desktop
 	@media screen and (min-width: $mq-med-large) {
 		#dashboard {
 			height: 100vh;
+
 			grid-template-columns: max-content 1fr;
 			grid-template-areas:
 				'logo navbar'
@@ -136,11 +148,11 @@
 		}
 
 		.logo {
-			display: block;
 			grid-area: logo;
 
 			display: flex;
 			align-items: end;
+
 			padding-left: $navbar-padding;
 
 			font-size: 1.5rem;
@@ -149,10 +161,11 @@
 
 		.menu {
 			grid-area: menu;
-
 			position: initial;
+
 			width: initial;
 			height: initial;
+
 			transform: translateX(0);
 			opacity: 1;
 		}
@@ -164,10 +177,6 @@
 		main {
 			border-left: var(--border-width) solid var(--border-color);
 			overflow: auto;
-		}
-
-		.hamburger {
-			display: none;
 		}
 	}
 </style>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 	import { createEventDispatcher } from 'svelte';
-
 	const dispatch = createEventDispatcher();
 
 	export let label: string;
@@ -36,10 +35,11 @@
 
 	label,
 	input {
-		color: var(--c-on-main);
-		background-color: var(--c-form-field-bg);
 		padding-left: 15px;
 		padding-right: 15px;
+
+		color: var(--c-on-bg);
+		background-color: var(--c-bg-contrast-1);
 
 		cursor: text;
 
@@ -50,12 +50,14 @@
 
 	label {
 		display: flex;
-		text-transform: uppercase;
-		color: var(--c-form-field-label);
-		font-size: 0.8rem;
 
 		padding-top: 10px;
-		border-radius: var(--form-input-radius) var(--form-input-radius) 0 0;
+		border-radius: var(--roundness) var(--roundness) 0 0;
+
+		color: var(--c-on-bg-dimmed-3);
+
+		font-size: 0.8rem;
+		text-transform: uppercase;
 
 		-webkit-user-select: none;
 		-moz-user-select: none;
@@ -64,12 +66,12 @@
 	}
 
 	input {
-		border: none;
 		width: 100%;
 
+		border: none;
 		padding-top: 5px;
 		padding-bottom: 10px;
-		border-radius: 0 0 var(--form-input-radius) var(--form-input-radius);
+		border-radius: 0 0 var(--roundness) var(--roundness);
 
 		&:focus {
 			outline: none;
@@ -79,20 +81,20 @@
 	// On focus
 	.form-field:focus-within label,
 	.form-field:focus-within input {
-		background-color: var(--c-form-field-active-bg);
+		background-color: var(--c-bg-contrast-2);
 	}
 
 	.form-field:focus-within label {
-		color: var(--c-form-field-focused-label);
+		color: var(--c-on-bg-dimmed-2);
 	}
 
 	// Error message
 	.form-field.error label,
 	.form-field.error input {
-		background-color: var(--c-form-field-error-bg);
+		background-color: var(--c-bg-error);
 	}
 
 	.error-message {
-		color: var(--c-form-field-error-label);
+		color: var(--c-on-bg-error);
 	}
 </style>

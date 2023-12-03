@@ -14,8 +14,8 @@
 }
 
 body {
-	color: var(--c-on-main);
-	background-color: var(--c-main-bg);
+	color: var(--c-on-bg);
+	background-color: var(--c-bg);
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -36,7 +36,7 @@ a:active {
 	color: var(--c-accent);
 }
 a:visited {
-	color: var(--c-accent-dark);
+	color: var(--c-accent-contrast-1);
 }
 
 .serif {
@@ -45,5 +45,5 @@ a:visited {
 
 /* TODO: Remove */
 .error {
-	color: var(--c-form-field-error-label);
+	color: var(--c-on-bg-error);
 }

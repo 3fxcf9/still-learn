@@ -133,15 +133,18 @@
 <style lang="scss">
 	@import '$lib/mq.scss';
 
+	$spacing: 2rem;
+
 	.login-container {
-		padding: 2rem;
+		padding: $spacing;
 	}
 
 	form {
-		margin-top: 2rem;
 		display: flex;
 		flex-direction: column;
-		gap: var(--form-input-spacing);
+		gap: $spacing;
+
+		margin-top: $spacing;
 	}
 
 	h2 {
@@ -150,28 +153,33 @@
 	}
 
 	form ~ p {
-		margin-top: 1rem;
+		margin-top: calc($spacing / 2);
 	}
 
-	@media screen and (min-width: $mq-small-med) {
+	@media screen and (min-width: $mq-small-med) and (max-width: $mq-med-large) {
 		.login-container {
 			padding-left: 20vw;
 			padding-right: 20vw;
 		}
 
 		h2 {
+			margin-top: calc($spacing / 2);
 			font-size: 2.5rem;
-			margin-top: 1rem;
 		}
 
 		form {
-			margin-top: 2rem;
+			margin-top: $spacing;
 		}
 	}
 
 	@media screen and (min-width: $mq-med-large) {
+		h2 {
+			font-size: 2.5rem;
+		}
+
 		#login {
 			height: 100vh;
+
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -181,16 +189,19 @@
 		}
 
 		.login-container {
-			background-color: var(--c-main-bg);
-			padding: 2rem;
-			border-radius: 10px;
-			overflow-y: scroll;
-			max-height: 100vh;
 			width: 50%;
+			max-height: 100vh;
+
+			padding: $spacing;
+			border-radius: var(--roundness);
+
+			background-color: var(--c-bg);
+
+			overflow-y: scroll;
 		}
 
 		form {
-			margin-top: 2rem;
+			margin-top: $spacing;
 		}
 	}
 </style>

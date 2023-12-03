@@ -1,61 +1,31 @@
 html {
-	--c-main-bg: white;
-	--c-main-bg-hover: #f2f2f2;
+	/* Background */
+	--c-bg: white;
+	--c-bg-contrast-1: #f3f4f5;
+	--c-bg-contrast-2: #d5dbdf;
+	--c-bg-error: #dfd9d5;
 
-	--border-color: #c9d1db;
-	--border-width: 1px;
+	--c-on-bg: black;
+	--c-on-bg-dimmed-1: #1a1a1a;
+	--c-on-bg-dimmed-2: #3a3d3f;
+	--c-on-bg-dimmed-3: #656a6d;
+	--c-on-bg-error: #b82525;
 
-	--c-on-main: black;
-	--c-on-main-dimmed: #1a1a1a;
-	--c-on-main-disabled: grey;
-
+	/* Primary */
 	--c-primary: black;
+
 	--c-on-primary: white;
 
+	/* Accent */
 	--c-accent: rgb(183, 95, 11);
-	--c-accent-dark: rgb(173, 83, 14);
+	--c-accent-contrast-1: rgb(173, 83, 14);
+	--c-accent-contrast-2: rgb(116, 54, 7);
+
 	--c-on-accent: white;
 
-	--c-curtain: rgba(0, 0, 0, 0.1);
-
-	/* Forms */
-	--c-form-field-bg: #ebeff2;
-	--c-form-field-active-bg: #d5dbdf;
-	--c-form-field-error-bg: #dfd9d5;
-	--c-form-field-label: #656a6d;
-	--c-form-field-focused-label: #3a3d3f;
-	--c-form-field-error-label: #b82525;
-	--form-input-spacing: 2rem;
-	--form-input-radius: 3px;
-}
-
-html[theme='dark'] {
-	--c-main-bg: #121212;
-	--c-main-bg-hover: #1c1c1c;
-
-	--border-color: #37393c;
+	/* UI options */
+	--border-color: #dbc9d6;
 	--border-width: 1px;
-
-	--c-on-main: white;
-	--c-on-main-dimmed: #d2d2d2;
-	--c-on-main-disabled: grey;
-
-	--c-primary: var(--c-accent-dark);
-	--c-on-primary: black;
-
-	--c-accent: rgb(255, 152, 53);
-	--c-accent-dark: rgb(195, 111, 46);
-	--c-on-accent: var(--c-main-bg);
-
+	--roundness: 3px;
 	--c-curtain: rgba(0, 0, 0, 0.1);
-
-	/* Forms */
-	--c-form-field-bg: #201f20;
-	--c-form-field-active-bg: #2c2c2f;
-	--c-form-field-error-bg: #2b2322;
-	--c-form-field-label: #bbbebf;
-	--c-form-field-focused-label: #f3f6ff;
-	--c-form-field-error-label: #b82525;
-	--form-input-spacing: 2rem;
-	--form-input-radius: 3px;
 }

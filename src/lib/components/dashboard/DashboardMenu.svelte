@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
+
 	import { pb } from '$lib/pocketbase';
 
 	// Icons
@@ -50,7 +51,7 @@
 		class="menuitem logout"
 		on:click|preventDefault={logout}
 		on:keyup={(e) => {
-			if (e.key == ' ' || e.key == 'Enter') logout();
+			if (e.code == 'Space' || e.code == 'Enter') logout();
 		}}
 	>
 		<Icon src={ArrowLeftOnRectangle} size="24px" theme="default" class="menuitem__svg" />
@@ -63,10 +64,12 @@
 
 	nav {
 		height: 100%;
-		padding: $navbar-padding;
+
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+
+		padding: $navbar-padding;
 	}
 
 	a {
@@ -74,24 +77,24 @@
 	}
 
 	a.active li {
-		color: var(--c-on-main-dimmed);
-		background-color: var(--c-main-bg-hover);
+		color: var(--c-on-bg-dimmed-1);
+		background-color: var(--c-bg-contrast-1);
 	}
 
 	.menuitem {
-		margin-bottom: $navbar-items-gap;
-		padding: $navbar-padding;
-
 		display: flex;
 		align-items: center;
 		gap: $navbar-items-gap;
 
-		color: var(--c-on-main-disabled);
-		border-radius: var(--form-input-radius);
+		margin-bottom: $navbar-items-gap;
+		padding: $navbar-padding;
+
+		color: var(--c-on-bg-dimmed-3);
+		border-radius: var(--roundness);
 
 		&:hover {
-			background-color: var(--c-main-bg-hover);
-			color: var(--c-on-main-dimmed);
+			color: var(--c-on-bg-dimmed-1);
+			background-color: var(--c-bg-contrast-1);
 		}
 
 		&.logout {

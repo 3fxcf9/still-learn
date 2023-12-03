@@ -7,11 +7,15 @@
 <style lang="scss">
 	input {
 		width: 100%;
+
 		border: none;
+
+		padding: 20px 25px;
+		border-radius: var(--roundness);
+
 		color: var(--c-on-primary);
 		background-color: var(--c-primary);
-		border-radius: var(--form-input-radius);
-		padding: 20px 25px;
+
 		text-transform: uppercase;
 
 		cursor: pointer;

@@ -3,23 +3,20 @@
 	import { Icon } from '@steeze-ui/svelte-icon';
 	import { Bars3, XMark } from '@steeze-ui/heroicons';
 
-	export let state: boolean = false;
+	export let state = false;
 
-	let className = '';
-	export { className as class };
-
-	function updateState() {
+	function toggleState() {
 		state = !state;
 	}
 </script>
 
 <div
-	class="{className} menu-hamburger-icon"
+	class="menu-hamburger-icon"
 	role="button"
 	tabindex="0"
-	on:click={updateState}
+	on:click={toggleState}
 	on:keyup={(e) => {
-		if (e.key == ' ' || e.key == 'Enter') updateState();
+		if (e.code == 'Space' || e.code == 'Enter') toggleState();
 	}}
 >
 	<Icon src={state ? XMark : Bars3} size="24px" theme="default" class="menu-hamburger-icon__svg" />
@@ -27,17 +24,21 @@
 
 <style lang="scss">
 	@import './DashboardConfig.scss';
+	$hamburger-icon-size: 2rem;
 
 	.menu-hamburger-icon {
 		height: 100%;
-		padding-left: $navbar-padding;
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		padding-left: $navbar-padding;
+
 		cursor: pointer;
 	}
 	:global(.menu-hamburger-icon__svg) {
-		width: 2rem;
-		height: 2rem;
+		width: $hamburger-icon-size;
+		height: $hamburger-icon-size;
 	}
 </style>

@@ -112,7 +112,7 @@
 </script>
 
 <div id="login">
-	<div class="login-container">
+	<div class="signup-container">
 		<h2>{title}</h2>
 		<form on:submit|preventDefault={signup}>
 			<div class="form__horizontal-layout">
@@ -138,9 +138,10 @@
 
 <style lang="scss">
 	@import '$lib/mq.scss';
+	$spacing: 2rem;
 
-	.login-container {
-		padding: var(--form-input-spacing);
+	.signup-container {
+		padding: $spacing;
 	}
 
 	.right {
@@ -148,15 +149,16 @@
 	}
 
 	form {
-		margin-top: 2rem;
 		display: flex;
 		flex-direction: column;
-		gap: var(--form-input-spacing);
+		gap: $spacing;
+
+		margin-top: $spacing;
 	}
 
 	.form__horizontal-layout {
 		display: flex;
-		gap: var(--form-input-spacing);
+		gap: $spacing;
 
 		:global(.form-field) {
 			flex: 1;
@@ -169,7 +171,7 @@
 	}
 
 	@media screen and (min-width: $mq-small-med) {
-		.login-container {
+		.signup-container {
 			padding-left: 20vw;
 			padding-right: 20vw;
 		}
@@ -179,28 +181,30 @@
 		}
 
 		form {
-			margin-top: 3rem;
+			margin-top: calc($spacing * 1.5);
 		}
 	}
 
 	@media screen and (min-width: $mq-med-large) {
 		#login {
 			height: 100vh;
+
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 		}
 
-		.login-container {
-			padding: 5rem;
+		.signup-container {
+			padding: calc($spacing * 2.5);
 			overflow-y: scroll;
 		}
 
 		form {
-			margin-top: 4rem;
+			margin-top: calc($spacing * 2);
 		}
 
 		.right {
 			display: block;
+
 			background-image: url('/images/register_bg.jpeg');
 			background-size: cover;
 			background-position: right center;
@@ -208,6 +212,6 @@
 	}
 
 	form ~ p {
-		margin-top: 1rem;
+		margin-top: calc($spacing / 2);
 	}
 </style>
