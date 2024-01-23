@@ -13,6 +13,7 @@ html {
 
 	/* Primary */
 	--c-primary: black;
+	--c-primary-contrast-1: #1a1a1a;
 
 	--c-on-primary: white;
 
@@ -24,7 +25,7 @@ html {
 	--c-on-accent: white;
 
 	/* UI options */
-	--border-color: #dbc9d6;
+	--border-color: #bfbfd0;
 	--border-width: 1px;
 	--roundness: 3px;
 	--c-curtain: rgba(0, 0, 0, 0.1);

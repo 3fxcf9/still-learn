@@ -95,7 +95,7 @@
 
 		border: none;
 		padding: 0 1rem 0;
-		border-radius: calc($navbar-height/8);
+		border-radius: var(--roundness);
 
 		color: var(--c-on-bg-dimmed-1);
 		background-color: var(--c-bg-contrast-1);
