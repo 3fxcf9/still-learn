@@ -23,6 +23,8 @@
 	}
 </script>
 
+<div class="test"></div>
+
 {#if deck_request}
 	{#await deck_request}
 		Chargement ...
@@ -43,10 +45,12 @@
 	{/await}
 {/if}
 
-<style type="scss">
+<style lang="scss">
+	@import '$lib/components/dashboard/DashboardConfig.scss';
+
 	.deck-list {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-		grid-gap: 1rem;
+		gap: $main-padding;
 	}
 </style>

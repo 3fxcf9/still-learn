@@ -4,8 +4,8 @@
 	import { goto } from '$app/navigation';
 	import { processError, type ProcessedError } from '$lib/pb_error_process';
 
-	import TextInput from '$lib/components/design_system/form/TextInput.svelte';
-	import SubmitButton from '$lib/components/design_system/form/SubmitButton.svelte';
+	import TextInput from '$lib/components/design_system/inputs/TextInput.svelte';
+	import SubmitButton from '$lib/components/design_system/buttons/SubmitButton.svelte';
 
 	// Redirect is already logged in
 	if ($currentUser) goto('dashboard');

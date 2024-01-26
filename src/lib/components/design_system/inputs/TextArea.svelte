@@ -6,21 +6,16 @@
 	export let id: string;
 	export let error_message: string = '';
 	export let placeholder: string = '';
-	export let password: boolean = false;
-
-	function typeAction(node: HTMLInputElement) {
-		node.type = password ? 'password' : 'text';
-	}
-
 	export let value = '';
-	function updateValue(event: Event & { currentTarget: EventTarget & HTMLInputElement }) {
-		dispatch('input', (event.target as HTMLInputElement)?.value ?? '');
+
+	function updateValue(event: Event & { currentTarget: EventTarget & HTMLTextAreaElement }) {
+		dispatch('input', (event.target as HTMLTextAreaElement)?.value ?? '');
 	}
 </script>
 
-<div class:error={error_message} class="form-field">
+<div class:error={error_message} class="form-textarea">
 	<label for={id}>{label}</label>
-	<input use:typeAction {id} bind:value on:input={updateValue} {placeholder} autocomplete="off" />
+	<textarea {id} bind:value on:input={updateValue} {placeholder} autocomplete="off"></textarea>
 	{#if error_message}
 		<div class="error-message">{error_message || '&nbsp;'}</div>
 	{/if}
@@ -29,12 +24,12 @@
 <style lang="scss">
 	$transition-duration: 0.3s;
 
-	.form-field {
+	.form-textarea {
 		position: relative;
 	}
 
 	label,
-	input {
+	textarea {
 		padding-left: 15px;
 		padding-right: 15px;
 
@@ -65,7 +60,7 @@
 		user-select: none;
 	}
 
-	input {
+	textarea {
 		width: 100%;
 
 		border: none;
@@ -73,24 +68,26 @@
 		padding-bottom: 10px;
 		border-radius: 0 0 var(--roundness) var(--roundness);
 
+		resize: none;
+
 		&:focus {
 			outline: none;
 		}
 	}
 
 	// On focus
-	.form-field:focus-within label,
-	.form-field:focus-within input {
+	.form-textarea:focus-within label,
+	.form-textarea:focus-within textarea {
 		background-color: var(--c-bg-contrast-2);
 	}
 
-	.form-field:focus-within label {
+	.form-textarea:focus-within label {
 		color: var(--c-on-bg-dimmed-2);
 	}
 
 	// Error message
-	.form-field.error label,
-	.form-field.error input {
+	.form-textarea.error label,
+	.form-textarea.error textarea {
 		background-color: var(--c-bg-error);
 	}
 

@@ -12,7 +12,7 @@
 	export let icon: IconSource | undefined = undefined;
 </script>
 
-<button class="btn btn--{type} btn--{variant}" on:click={() => dispatch('click')}>
+<button class="btn btn--{type} btn--{variant}" class:icon on:click={() => dispatch('click')}>
 	{#if icon}
 		<Icon src={icon} size="24px" theme="default" class="btn__icon" />
 	{/if}
@@ -23,6 +23,12 @@
 	.btn {
 		display: inline-flex;
 		align-items: center;
+		justify-content: center;
+
+		&.icon {
+			justify-content: start;
+		}
+
 		gap: 0.5rem;
 
 		border: none;

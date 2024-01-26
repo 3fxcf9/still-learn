@@ -24,6 +24,11 @@ html {
 
 	--c-on-accent: white;
 
+	/* Error */
+	--c-error: rgb(241, 76, 76);
+
+	--c-on-error: rgb(255, 255, 255);
+
 	/* UI options */
 	--border-color: #bfbfd0;
 	--border-width: 1px;

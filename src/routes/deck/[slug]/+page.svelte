@@ -1,50 +1,62 @@
 <script lang="ts">
 	import { pb } from '$lib/pocketbase';
-	import type { RecordModel } from 'pocketbase';
-	import { page } from '$app/stores';
-	import Card from '$lib/components/design_system/Card.svelte';
 
+	import Card from '$lib/components/design_system/Card.svelte';
+	import Button from '$lib/components/design_system/buttons/Button.svelte';
+
+	/** @type {import('./$types').PageData} */
+	type Card = { id: string; term: string; definition: string };
+	export let data: { deck_name: string; deck_id: string; cards: Card[] };
+
+	// Pagination
+	import { page } from '$app/stores';
 	let page_nb = 1;
 
 	function gotoPage(nb: number) {
 		page_nb = nb;
 	}
 
-	let deck_request: Promise<RecordModel> | undefined = undefined;
-	// TODO: Check if empty and remove useless reaction
-	$: {
-		deck_request = pb.collection('decks').getOne($page.params.slug, {
-			expand: 'cards' // TODO: Sort expands by date desc
-		});
+	function createCard() {
+		console.log(data.cards);
+
+		data.cards = data.cards.concat([{ id: '', term: '', definition: '' }]);
+	}
+
+	async function appendNewCardId(id: string) {
+		console.log(id);
+
+		await pb.collection('decks').update(data.deck_id, { 'cards+': [id] });
+	}
+
+	async function deleteCard(id: string) {
+		data.cards = data.cards.filter((c) => c.id != id);
 	}
 </script>
 
 <div id="deck-info">
-	{#if deck_request}
-		{#await deck_request}
-			Chargement ...
-		{:then deck_details}
-			<h1>{deck_details.name}</h1>
-			<div class="cards-list">
-				{#if deck_details.expand?.cards}
-					{#each deck_details.expand.cards as card}
-						<Card term={card.term} definition={card.definition} />
-					{/each}
-				{:else}
-					Aucune carte
-				{/if}
-			</div>
-		{/await}
-	{/if}
+	<h1>{data.deck_name}</h1>
+	<div class="cards-list">
+		{#if data.cards}
+			{#each data.cards as card}
+				<Card id={card.id} term={card.term} definition={card.definition} on:create={(e) => appendNewCardId(e.detail.id)} on:delete={() => deleteCard(card.id)} />
+			{/each}
+		{:else}
+			Aucune carte
+		{/if}
+
+		<Button type="filled" variant="primary" on:click={createCard}>Creer une carte</Button>
+	</div>
 </div>
 
-<style type="scss">
+<style lang="scss">
+	@import '$lib/components/dashboard/DashboardConfig.scss';
+
 	#deck-info {
-		padding: 1rem;
+		padding: $main-padding;
 	}
 	.cards-list {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: $main-padding;
 	}
 </style>

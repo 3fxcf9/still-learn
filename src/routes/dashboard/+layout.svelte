@@ -48,7 +48,6 @@
 <style lang="scss">
 	@import '$lib/components/dashboard/DashboardConfig.scss';
 	@import '$lib/mq.scss';
-	$main-padding: 0.5rem;
 
 	#dashboard {
 		position: relative; // Menu in desktop mode
